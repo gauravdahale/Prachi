@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".OrderActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10sp"
+        android:text="Place your order"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:text="Menu" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subtitle"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/coffee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coffee" />
+
+        <RadioButton
+            android:id="@+id/tea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tea" />
+
+        <RadioButton
+            android:id="@+id/milk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Milk" />
+
+    </RadioGroup>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/radio_group"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="#C4BEC5" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:layout_marginHorizontal="4dp"
+        app:cardBackgroundColor="#EEEDEF"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view">
+
+            <CheckBox
+                android:id="@+id/biscuit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="With Biscuits" />
+
+            <CheckBox
+                android:id="@+id/chocolate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="With Chocolate" />
+
+            <CheckBox
+                android:id="@+id/extra_cream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="With Exra Cream" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:id="@+id/bottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:weightSum="2">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:text="Total Amount"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_baseline_check_24" />
+</RelativeLayout>
