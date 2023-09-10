@@ -17,7 +17,6 @@ class OrderActivity : AppCompatActivity() {
 //    CHOCOLATE =10
 //    CREAM =15
     lateinit var mRadioGroup: RadioGroup
-    private var productCost = 0
     lateinit var mTotalAmountView: TextView
     lateinit var mFab: FloatingActionButton
     lateinit var mBiscuit: CheckBox
@@ -27,6 +26,8 @@ class OrderActivity : AppCompatActivity() {
     val mChocolatePrice = 10
     var mCreamPrice = 0
     var mTotal = 0
+    var productCost = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
@@ -40,7 +41,6 @@ class OrderActivity : AppCompatActivity() {
         mCream = findViewById(R.id.extra_cream)
 
         mTotalAmountView.text = productCost.toString()
-
         mBiscuit.setOnClickListener {
             if (this.mTotal != 0) {
                 if (mBiscuit.isChecked) {
@@ -87,7 +87,6 @@ class OrderActivity : AppCompatActivity() {
         }
 
         mFab.setOnClickListener {
-            // TODO:  GO TO ORDER CONFIRMATION SCREEN
             val intent = Intent(this, OrderConfirmActivity::class.java)
 intent.putExtra("total_amount",mTotal.toString())
             startActivity(intent)

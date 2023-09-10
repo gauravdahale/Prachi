@@ -6,11 +6,16 @@ import android.widget.TextView
 import org.w3c.dom.Text
 
 class OrderConfirmActivity : AppCompatActivity() {
+    lateinit var view: TextView
+    var amount = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_confirm)
-        findViewById<TextView>(R.id.showamount).text =
-            "Your total bill amount is "+ intent.getStringExtra("total_amount")
+        amount = intent.getStringExtra("total_amount").toString()
+
+        view = findViewById<TextView>(R.id.showamount)
+
+        view.text = "Your total bill amount is $amount"
 
     }
 }
