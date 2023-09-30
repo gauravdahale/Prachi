@@ -11,6 +11,5 @@ class OrderConfirmActivity : AppCompatActivity() {
         setContentView(R.layout.activity_order_confirm)
         findViewById<TextView>(R.id.showamount).text =
             "Your total bill amount is "+ intent.getStringExtra("total_amount")
-
     }
 }
