@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-submitButton=findViewById(R.id.submitBtn)
+        submitButton=findViewById(R.id.submitBtn)
 
         val intent = Intent(this,OrderActivity::class.java)
         startActivity(intent)
@@ -23,14 +23,6 @@ val intent = Intent(this,OrderActivity::class.java)
 startActivity(intent)
 }
 
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    override fun onPause() {
-        super.onPause()
     }
 
 }
